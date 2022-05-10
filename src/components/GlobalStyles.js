@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
+
   *{
     margin: 0;
     padding: 0;
@@ -8,7 +9,8 @@ const GlobalStyles = createGlobalStyle`
   }
   body{
     background: #1b1b1b;
-    font-size: 65.2%;
+    font-size: 62.5%;
+    font-family: 'Inter', sans-serif;
   }
   button{
     padding: 1rem 2rem;
@@ -19,6 +21,7 @@ const GlobalStyles = createGlobalStyle`
     border: 3px solid #23d997;
     cursor:pointer;
     transition: all 0.3s ease-in-out;
+    font-family: 'Inter', sans-serif;
     &:hover{
       background:#23d997;
       color:black; 
@@ -29,13 +32,13 @@ const GlobalStyles = createGlobalStyle`
     font-weight: lighter;
   }
   h2{
-    font-size: 3.8rem;
+    font-size: 4.2rem;
   }
   h3{
     font-size: 2rem;
   }
   h4{
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold; 
   }
   p{
