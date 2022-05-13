@@ -9,18 +9,22 @@ import teamwork from '../img/teamwork.svg';
 import styled from 'styled-components';
 import { StyleAbout, StyleDescription, StyleImage, StyleHide } from '../style';
 
+//Animation
+import { motion } from 'framer-motion';
+import { titleAnime, fadeAnime, imgAnime } from '../animation';
+
 const AboutServices = () => {
 	return (
 		<StyleServices>
 			<StyleDescription>
 				<div className='title'>
 					<StyleHide>
-						<h2>
+						<motion.h2 variants={titleAnime}>
 							High <span>quality</span>
-						</h2>
+						</motion.h2>
 					</StyleHide>
 					<StyleHide>
-						<h2>services.</h2>
+						<motion.h2 variants={titleAnime}>services.</motion.h2>
 					</StyleHide>
 				</div>
 				<Cards>
@@ -29,7 +33,7 @@ const AboutServices = () => {
 							<img src={clock} alt='clock icon' />
 							<h3>Efficency</h3>
 						</div>
-						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+						<motion.p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</motion.p>
 					</Card>
 					<Card>
 						<div className='icon'>

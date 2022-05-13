@@ -20,7 +20,7 @@ const GlobalStyles = createGlobalStyle`
     background: transparent;
     border: 3px solid #23d997;
     cursor:pointer;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-out;
     font-family: 'Inter', sans-serif;
     &:hover{
       background:#23d997;
@@ -28,7 +28,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   h1{
-    font-size: 4.8rem;
+    font-size: 4.5rem;
     font-weight: lighter;
   }
   h2{
@@ -42,7 +42,7 @@ const GlobalStyles = createGlobalStyle`
     font-weight: bold; 
   }
   p{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 3rem 0rem;
     line-height: 150%;
     color: #ccc;

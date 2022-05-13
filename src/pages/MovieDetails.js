@@ -24,23 +24,30 @@ const MovieDetails = () => {
 						<h2>{movie.title}</h2>
 						<img src={movie.mainImg} alt='main profile' />
 					</StyleHeadline>
-
 					<StyleAwards>
 						{movie.awards.map((award) => (
-							<div className='award'>
-								<h3>{award.title}</h3>
-								<div className='line'></div>
-								<p>{award.description}</p>
-							</div>
+							<Award
+								key={award.title}
+								title={award.title}
+								description={award.description}></Award>
 						))}
 					</StyleAwards>
-
 					<StyleImageDisplay>
 						<img src={movie.secondaryImg} alt='second profile' />
 					</StyleImageDisplay>
 				</StyleMovie>
 			)}
 		</>
+	);
+};
+
+const Award = ({ title, description }) => {
+	return (
+		<div className='award'>
+			<h3>{title}</h3>
+			<div className='line'></div>
+			<p>{description}</p>
+		</div>
 	);
 };
 
@@ -72,7 +79,7 @@ const StyleAwards = styled.div`
 	.award {
 		padding: 4.5rem;
 		.line {
-			height: 0.5rem;
+			height: 0.4rem;
 			margin: 1rem 0rem;
 			width: 80%;
 			background: #23d997;

@@ -5,18 +5,20 @@ export const StyleAbout = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 5rem 8rem;
+	padding: 15vh 8rem;
 	color: white;
 `;
 
 export const StyleDescription = styled.div`
 	flex: 1;
+	z-index: 2;
 `;
 
 export const StyleImage = styled.div`
 	flex: 1;
 	padding-left: 5rem;
 	overflow: hidden;
+	z-index: 2;
 	img {
 		width: 100%;
 		height: 80vh;

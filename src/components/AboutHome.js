@@ -1,8 +1,12 @@
 import React from 'react';
 import hero1 from '../img/home1.png';
-// import styled from 'styled-components';
+import Wave from './Wave';
 //Styles
 import { StyleAbout, StyleDescription, StyleImage, StyleHide } from '../style';
+
+//Animation
+import { motion } from 'framer-motion';
+import { titleAnime, fadeAnime, imgAnime } from '../animation';
 
 const AboutHome = () => {
 	return (
@@ -10,26 +14,27 @@ const AboutHome = () => {
 			<StyleDescription>
 				<div className='title'>
 					<StyleHide>
-						<h1>We work to make</h1>
+						<motion.h1 variants={titleAnime}>We work to make</motion.h1>
 					</StyleHide>
 					<StyleHide>
-						<h1>
+						<motion.h1 variants={titleAnime}>
 							your <span>dreams</span>
-						</h1>
+						</motion.h1>
 					</StyleHide>
 					<StyleHide>
-						<h1>come true.</h1>
+						<motion.h1 variants={titleAnime}>come true.</motion.h1>
 					</StyleHide>
 				</div>
-				<p>
+				<motion.p variants={fadeAnime}>
 					Contact us for nay photography and videography ideas that you have. We
 					have professional with amazing skils to help you to achieve this.
-				</p>
-				<button>Contact Us</button>
+				</motion.p>
+				<motion.button variants={fadeAnime}>Contact Us</motion.button>
 			</StyleDescription>
 			<StyleImage className='img'>
-				<img src={hero1} alt='guy with a camera' />
+				<motion.img variants={imgAnime} src={hero1} alt='guy with a camera' />
 			</StyleImage>
+			<Wave />
 		</StyleAbout>
 	);
 };
