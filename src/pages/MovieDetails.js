@@ -57,7 +57,7 @@ const StyleMovie = styled.div`
 
 const StyleHeadline = styled.div`
 	min-height: 90vh;
-	padding-top: 15vh;
+	padding-top: 2rem;
 	h2 {
 		font-weight: lighter;
 		padding: 2rem;

@@ -6,6 +6,7 @@ import AboutUs from './pages/AboutUs';
 import OurWork from './pages/OurWork';
 import ContactUs from './pages/ContactUs';
 import MovieDetails from './pages/MovieDetails';
+import ScrollTop from './components/ScrollTop';
 
 //Routes
 import { Routes, Route, useLocation } from 'react-router-dom';
@@ -26,6 +27,7 @@ function App() {
 					<Route path='/work/:id' element={<MovieDetails />} />
 					<Route path='/contact' element={<ContactUs />} />
 				</Routes>
+				<ScrollTop />
 			</AnimatePresence>
 		</div>
 	);

@@ -7,7 +7,7 @@ export const pageAnimation = {
 		opacity: 1,
 		y: 0,
 		transition: {
-			duration: 1,
+			duration: 0.5,
 			when: 'beforeChildren',
 			staggerChildren: 0.25,
 		},
@@ -66,7 +66,7 @@ export const imgAnime = {
 
 export const lineAnime = {
 	hidden: {
-		width: 0,
+		width: '0%',
 	},
 	show: {
 		width: '100%',
@@ -87,6 +87,38 @@ export const slider = {
 		transition: {
 			duration: 1,
 			ease: 'easeOut',
+		},
+	},
+};
+
+export const SliderContainer = {
+	hidden: {
+		opacity: 1,
+	},
+	show: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.15,
+			ease: 'easeOut',
+		},
+	},
+};
+
+export const scrollAnime = {
+	hidden: {
+		opacity: 0,
+		scale: 0.75,
+		transition: {
+			duration: 1,
+			ease: 'easeInOut',
+		},
+	},
+	show: {
+		opacity: 1,
+		scale: 1,
+		transition: {
+			duration: 1,
+			ease: 'easeInOut',
 		},
 	},
 };

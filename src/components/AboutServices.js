@@ -1,4 +1,6 @@
 import React from 'react';
+
+//Images
 import hero2 from '../img/home2.png';
 import clock from '../img/clock.svg';
 import diaphragm from '../img/diaphragm.svg';
@@ -11,20 +13,26 @@ import { StyleAbout, StyleDescription, StyleImage, StyleHide } from '../style';
 
 //Animation
 import { motion } from 'framer-motion';
-import { titleAnime, fadeAnime, imgAnime } from '../animation';
+import { scrollAnime } from '../animation';
+import { UseScroll } from './UseScroll';
 
 const AboutServices = () => {
+	const [element, controls] = UseScroll();
 	return (
-		<StyleServices>
+		<StyleServices
+			ref={element}
+			variants={scrollAnime}
+			animate={controls}
+			initial='hidden'>
 			<StyleDescription>
 				<div className='title'>
 					<StyleHide>
-						<motion.h2 variants={titleAnime}>
+						<h2>
 							High <span>quality</span>
-						</motion.h2>
+						</h2>
 					</StyleHide>
 					<StyleHide>
-						<motion.h2 variants={titleAnime}>services.</motion.h2>
+						<h2>services.</h2>
 					</StyleHide>
 				</div>
 				<Cards>
@@ -33,7 +41,9 @@ const AboutServices = () => {
 							<img src={clock} alt='clock icon' />
 							<h3>Efficency</h3>
 						</div>
-						<motion.p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</motion.p>
+						<motion.p>
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+						</motion.p>
 					</Card>
 					<Card>
 						<div className='icon'>

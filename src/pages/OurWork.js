@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import { UseScroll } from '../components/UseScroll';
 
 //Images
 import athlete from '../img/athlete-small.png';
@@ -13,22 +14,28 @@ import {
 	fadeAnime,
 	imgAnime,
 	lineAnime,
+	SliderContainer,
 	slider,
+	scrollAnime,
 } from '../animation';
 import { motion } from 'framer-motion';
 
 const OurWork = () => {
 	let navigation = useNavigate();
+	const [element, controls] = UseScroll();
+	const [element2, controls2] = UseScroll();
 	return (
 		<StyleWork
 			variants={pageAnimation}
 			initial='hidden'
 			animate='show'
 			exit='exit'>
-			<Frame1 variants={slider}></Frame1>
-			<Frame2 variants={slider}></Frame2>
-			<Frame3 variants={slider}></Frame3>
-			<Frame4 variants={slider}></Frame4>
+			<motion.div variants={SliderContainer}>
+				<Frame1 variants={slider}></Frame1>
+				<Frame2 variants={slider}></Frame2>
+				<Frame3 variants={slider}></Frame3>
+				<Frame4 variants={slider}></Frame4>
+			</motion.div>
 			<StyleMovie>
 				<motion.h2 variants={fadeAnime}>The Athlete</motion.h2>
 				<motion.div variants={lineAnime} className='line'></motion.div>
@@ -41,7 +48,11 @@ const OurWork = () => {
 					/>
 				</StyleHide>
 			</StyleMovie>
-			<StyleMovie>
+			<StyleMovie
+				ref={element}
+				variants={scrollAnime}
+				animate={controls}
+				initial='hidden'>
 				<motion.h2 variants={fadeAnime}>The Racer</motion.h2>
 				<motion.div variants={lineAnime} className='line'></motion.div>
 				<StyleHide>
@@ -53,7 +64,11 @@ const OurWork = () => {
 					/>
 				</StyleHide>
 			</StyleMovie>
-			<StyleMovie>
+			<StyleMovie
+				ref={element2}
+				variants={scrollAnime}
+				animate={controls2}
+				initial='hidden'>
 				<motion.h2 variants={fadeAnime}>Good Times</motion.h2>
 				<motion.div variants={lineAnime} className='line'></motion.div>
 				<StyleHide>
@@ -70,13 +85,13 @@ const OurWork = () => {
 };
 
 const StyleWork = styled(motion.div)`
-	padding: 15vh 8rem;
+	padding: 2rem 8rem;
 	min-height: 90vh;
 	background: #fff;
 	color: #000;
 `;
 
-const StyleMovie = styled.div`
+const StyleMovie = styled(motion.div)`
 	padding: 2rem 0rem 8rem;
 	h2 {
 		font-weight: lighter;
