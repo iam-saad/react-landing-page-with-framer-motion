@@ -89,6 +89,10 @@ const StyleWork = styled(motion.div)`
 	min-height: 90vh;
 	background: #fff;
 	color: #000;
+
+	@media only screen and (max-width: 756px) {
+		padding: 2rem;
+	}
 `;
 
 const StyleMovie = styled(motion.div)`
@@ -108,6 +112,13 @@ const StyleMovie = styled(motion.div)`
 		width: 100%;
 		margin-bottom: 4rem;
 		background: #23d997;
+	}
+	@media only screen and (max-width: 756px) {
+		padding: 3rem;
+		img {
+			height: 100%;
+			width: 100%;
+		}
 	}
 `;
 

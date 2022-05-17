@@ -14,14 +14,14 @@ const Toggle = ({ children, title }) => {
 };
 
 const StyledToggle = styled(motion.div)`
-	padding: 2rem 0rem;
+	padding: 1rem 0rem;
 	cursor: pointer;
 	.answer {
-		padding: 2rem 0rem;
+		padding: 1rem 0rem;
 	}
 	h4 {
 		font-size: 2.5rem;
-		padding: 2rem 0rem;
+		padding: 1rem 0rem;
 	}
 	p {
 		font-size: 1.2rem;
@@ -32,6 +32,12 @@ const StyledToggle = styled(motion.div)`
 		width: 100%;
 		height: 0.3rem;
 		margin: 2rem 0rem;
+	}
+
+	@media only screen and (max-width: 756px) {
+		p {
+			font-size: 1.5rem;
+		}
 	}
 `;
 

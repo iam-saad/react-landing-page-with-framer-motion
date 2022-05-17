@@ -7,6 +7,14 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+  html{
+    @media only screen and (max-width: 1500px) {
+      font-size: 85%;
+    }
+    @media only screen and (max-width: 756px) {
+      font-size: 55%;
+    }
+  }
   body{
     background: #1b1b1b;
     font-size: 62.5%;

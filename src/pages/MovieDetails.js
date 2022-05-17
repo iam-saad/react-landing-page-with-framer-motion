@@ -68,6 +68,13 @@ const StyleHeadline = styled.div`
 		height: 80vh;
 		object-fit: cover;
 	}
+	@media only screen and (max-width: 756px) {
+		min-height: auto;
+		img {
+			height: 100%;
+			width: 100%;
+		}
+	}
 `;
 
 const StyleAwards = styled.div`
@@ -86,6 +93,14 @@ const StyleAwards = styled.div`
 		}
 		p {
 			padding: 2.5rem 0rem;
+		}
+	}
+	@media only screen and (max-width: 756px) {
+		min-height: auto;
+		display: block;
+		margin: 4rem 5rem;
+		.award {
+			padding: 2.5rem;
 		}
 	}
 `;

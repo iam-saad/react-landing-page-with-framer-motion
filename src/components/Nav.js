@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 //Links
@@ -7,6 +7,10 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Nav = () => {
+	const [navActive, setNavActive] = useState(false);
+	const navbarHandler = () => {
+		setNavActive(!navActive);
+	};
 	const { pathname } = useLocation();
 	return (
 		<StyleNav>
@@ -15,7 +19,7 @@ const Nav = () => {
 					Shutter
 				</Link>
 			</h1>
-			<ul>
+			<ul className={navActive ? 'active' : ''}>
 				<li>
 					<Link to='/'>About Us.</Link>
 					<Line
@@ -41,6 +45,10 @@ const Nav = () => {
 					/>
 				</li>
 			</ul>
+			<div className='navToggle' onClick={navbarHandler}>
+				<div className={navActive ? 'line line1 active' : 'line line1'}></div>
+				<div className={navActive ? 'line line2 active' : 'line line2'}></div>
+			</div>
 		</StyleNav>
 	);
 };
@@ -57,8 +65,9 @@ const StyleNav = styled.nav`
 	top: 0;
 	left: 0;
 	z-index: 3;
+	// overflow-x: hidden;
 	a {
-		color: #fff;
+		color: white;
 		text-decoration: none;
 	}
 	h1 {
@@ -77,6 +86,64 @@ const StyleNav = styled.nav`
 	li {
 		font-size: 1rem;
 		position: relative;
+	}
+	@media only screen and (max-width: 1200px) {
+		padding: 1.5rem 5rem;
+		min-height: 7vh;
+		ul {
+			width: 50%;
+		}
+	}
+	@media only screen and (max-width: 756px) {
+		padding: 1.5rem 5rem;
+	}
+	@media only screen and (max-width: 428px) {
+		#logo {
+			font-size: 2.2rem;
+		}
+		.navToggle {
+			pointer-events: all;
+			cursor: pointer;
+			z-index: 2;
+		}
+		.line {
+			height: 0.3rem;
+			width: 3rem;
+			margin-bottom: 0.3rem;
+			background: #23d997;
+			pointer-events: none;
+			transition: all 1s ease-in-out;
+		}
+		ul {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100vh;
+			width: 100%;
+			padding: 5rem;
+			background: #282828;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			transform: translateX(200%);
+			transition: all 1s ease-in-out;
+		}
+		ul.active {
+			transform: translateX(0%);
+			transition: all 1s ease-in-out;
+		}
+		li {
+			font-size: 2.5rem;
+		}
+		.line1.active {
+			transform: rotate(45deg) translateY(0.4rem);
+			transition: all 1s ease-in-out;
+		}
+		.line2.active {
+			transform: rotate(-45deg) translateY(-0.4rem);
+			transition: all 1s ease-in-out;
+		}
 	}
 `;
 
