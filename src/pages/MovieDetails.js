@@ -95,7 +95,7 @@ const StyleAwards = styled.div`
 			padding: 2.5rem 0rem;
 		}
 	}
-	@media only screen and (max-width: 756px) {
+	@media only screen and (max-width: 1064px) {
 		min-height: auto;
 		display: block;
 		margin: 4rem 5rem;

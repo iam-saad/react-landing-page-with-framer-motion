@@ -51,7 +51,7 @@ const ContactStyle = styled(motion.div)`
 	min-height: 100vh;
 	background: #fff;
 	@media (max-width: 1500px) {
-		padding: 2rem;
+		padding: 5rem;
 		font-size: 1rem;
 	}
 `;
@@ -65,7 +65,8 @@ const Circle = styled.div`
 	height: 5rem;
 	background: #353535;
 	@media (max-width: 1500px) {
-		display: none;
+		width: 2rem;
+		height: 2rem;
 	}
 `;
 
@@ -77,7 +78,7 @@ const Social = styled(motion.div)`
 	}
 	@media (max-width: 1500px) {
 		h2 {
-			margin: 1rem 0rem;
+			margin: 1rem;
 			font-size: 2.5rem;
 		}
 	}

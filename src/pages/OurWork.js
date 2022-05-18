@@ -89,7 +89,9 @@ const StyleWork = styled(motion.div)`
 	min-height: 90vh;
 	background: #fff;
 	color: #000;
-
+	@media only screen and (max-width: 1200px) {
+		padding: 2rem 5rem;
+	}
 	@media only screen and (max-width: 756px) {
 		padding: 2rem;
 	}
@@ -129,8 +131,8 @@ const StyleHide = styled.div`
 //Animation Frame
 const Frame1 = styled(motion.div)`
 	position: fixed;
-	top: 10%;
-	left: 0;
+	top: 0%;
+	left: 0%;
 	height: 100%;
 	width: 100%;
 	z-index: 2;
